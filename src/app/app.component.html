@@ -1,0 +1,27 @@
+<!-- This is the 2 column layout in step D. -->
+<div>
+  <div id="left-column" class="flex">
+    <div>
+      <app-world
+        (svgIdSelected)="selectedSvgId = $event"
+        (capitalSelected)="selectedCapital = $event"
+        (regionSelected)="selectedRegion = $event"
+        (incomeLevelSelected)="selectedIncomeLevel = $event"
+        (latitudeSelected)="selectedLatitude = $event"
+        (longitudeSelected)="selectedLongitude = $event"
+      ></app-world>
+    </div>
+    <div id="right-column" class="pt-12 justify-end">
+      <table>
+        <app-country
+          [countryId]="selectedSvgId"
+          [countryCapital]="selectedCapital"
+          [countryRegion]="selectedRegion"
+          [countryIncomeLevel]="selectedIncomeLevel"
+          [latitude]="selectedLatitude"
+          [longitude]="selectedLongitude"
+        ></app-country>
+      </table>
+  </div>
+</div>
+<!----------------------------------------------------------------->
